@@ -3,7 +3,7 @@
 //  FSOpenInWhatsApp
 //
 //  Created by Felix Schulze on 27.06.2014
-//  Copyright (c) 2014 Felix Schulze. All rights reserved.
+//  Copyright (c) 2014-2015 Felix Schulze. All rights reserved.
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -28,10 +28,32 @@
 
 @interface FSOpenInWhatsApp : NSObject
 
+/**
+ *  Check if WhatsApp is installed.
+ *
+ *  @return true if sending text with WhatsApp is possible.
+ */
 + (BOOL)canSendWhatsApp;
 
+/**
+ *  Send a text with WhatsApp.
+ *  It automatically checks if WhatsApp is installed.
+ *
+ *  @param text string for sending
+ *
+ *  @return true if successful, false if not successful or WhatsApp is not installed
+ */
 + (BOOL)sendText:(NSString *)text;
 
+/**
+ *  Send a text with WhatsApp to a specific addressbook id.
+ *  It automatically checks if WhatsApp is installed.
+ *
+ *  @param text          string for sending
+ *  @param addressBookId specific addressbook id
+ *
+ *  @return true if successful, false if not successful or WhatsApp is not installed
+ */
 + (BOOL)sendText:(NSString *)text toAddressBookId:(NSString *)addressBookId;
 
 @end

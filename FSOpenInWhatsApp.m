@@ -3,7 +3,7 @@
 //  FSOpenInWhatsApp
 //
 //  Created by Felix Schulze on 27.06.2014
-//  Copyright (c) 2014 Felix Schulze. All rights reserved.
+//  Copyright (c) 2014-2015 Felix Schulze. All rights reserved.
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
