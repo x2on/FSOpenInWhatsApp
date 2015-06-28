@@ -1,0 +1,7 @@
+language: objective-c
+before_install: 
+ - echo "Update CocoaPods"
+ - gem install cocoapods
+ - pod --version
+script: 
+ - xctool -scheme FSOpenInWhatsApp -sdk iphonesimulator clean build
