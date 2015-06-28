@@ -25,6 +25,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIkit.h>
 
 @interface FSOpenInWhatsApp : NSObject
 
