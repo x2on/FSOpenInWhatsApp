@@ -45,29 +45,30 @@ static NSString *encodeByAddingPercentEscapes(NSString *input) {
 }
 
 + (BOOL)sendText:(NSString *)text {
-    return [FSOpenInWhatsApp sendText:text toAddressBookId:nil];
+    return [[self class] sendText:text toAddressBookId:nil];
 }
 
 + (BOOL)sendText:(NSString *)text toAddressBookId:(NSString *)addressBookId {
     if ([FSOpenInWhatsApp canSendWhatsApp]) {
-        
-        NSMutableString *urlString = [NSMutableString string];
-        [urlString appendString:WHATSAPP_URL_SCHEME];
-        [urlString appendString:@"send?"];
-        if (addressBookId) {
-            [urlString appendString:@"abid="];
-            [urlString appendString:encodeByAddingPercentEscapes(addressBookId)];
-            [urlString appendString:@"&"];
-        }
-        if (text) {
-            [urlString appendString:@"text="];
-            [urlString appendString:encodeByAddingPercentEscapes(text)];
-        }
-
-        return [[UIApplication sharedApplication] openURL:[NSURL URLWithString:urlString]];
+        return [[UIApplication sharedApplication] openURL:[[self class] urlForText:text toAddressBookId:addressBookId]];
     }
     return NO;
 }
 
++ (NSURL *)urlForText:(NSString *)text toAddressBookId:(NSString *)addressBookId {
+    NSMutableString *urlString = [NSMutableString string];
+    [urlString appendString:WHATSAPP_URL_SCHEME];
+    [urlString appendString:@"send?"];
+    if (addressBookId) {
+        [urlString appendString:@"abid="];
+        [urlString appendString:encodeByAddingPercentEscapes(addressBookId)];
+        [urlString appendString:@"&"];
+    }
+    if (text) {
+        [urlString appendString:@"text="];
+        [urlString appendString:encodeByAddingPercentEscapes(text)];
+    }
+    return [NSURL URLWithString:urlString];
+}
 
 @end
