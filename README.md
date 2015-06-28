@@ -1,4 +1,4 @@
-# FSOpenInWhatsApp [![Cocoa Pod](https://cocoapod-badges.herokuapp.com/p/FSOpenInWhatsApp/badge.svg)](http://cocoadocs.org/docsets/FSOpenInWhatsApp/) [![Cocoa Pod](https://cocoapod-badges.herokuapp.com/v/FSOpenInWhatsApp/badge.svg)](http://cocoadocs.org/docsets/FSOpenInWhatsApp/) [![License](https://go-shields.herokuapp.com/license-MIT-blue.png)](http://opensource.org/licenses/MIT)
+# FSOpenInWhatsApp [![Build Status](https://travis-ci.org/x2on/FSOpenInWhatsApp.png)](https://travis-ci.org/x2on/FSOpenInWhatsApp) [![Cocoa Pod](https://cocoapod-badges.herokuapp.com/p/FSOpenInWhatsApp/badge.svg)](http://cocoadocs.org/docsets/FSOpenInWhatsApp/) [![Cocoa Pod](https://cocoapod-badges.herokuapp.com/v/FSOpenInWhatsApp/badge.svg)](http://cocoadocs.org/docsets/FSOpenInWhatsApp/) [![License](https://go-shields.herokuapp.com/license-MIT-blue.png)](http://opensource.org/licenses/MIT)
 
 FSOpenInWhatsApp is a tool for sending messages with WhatsApp iOS App.
 
