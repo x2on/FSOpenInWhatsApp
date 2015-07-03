@@ -1,7 +1,8 @@
 language: objective-c
+osx_image: xcode6.4
 before_install: 
  - echo "Update CocoaPods"
  - gem install cocoapods
  - pod --version
 script: 
- - xctool -scheme FSOpenInWhatsApp -sdk iphonesimulator clean build
+ - xctool -scheme FSOpenInWhatsApp -sdk iphonesimulator  -destination 'platform=iOS Simulator,name=iPhone 5' clean build test
