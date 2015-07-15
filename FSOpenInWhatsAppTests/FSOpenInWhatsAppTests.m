@@ -55,4 +55,8 @@
     XCTAssertEqualObjects([FSOpenInWhatsApp urlForText:@"!*'();:@&=+$,/?%#[]" toAddressBookId:nil], [NSURL URLWithString:@"whatsapp://send?text=%21%2A%27%28%29%3B%3A%40%26%3D%2B%24%2C%2F%3F%25%23%5B%5D"]);
 }
 
+- (void)testUrlStringWithSpecialCharsAndAddressBookId {
+    XCTAssertEqualObjects([FSOpenInWhatsApp urlForText:@"!*'();:@&=+$,/?%#[]" toAddressBookId:@"!*'();:@&=+$,/?%#[]"], [NSURL URLWithString:@"whatsapp://send?abid=%21%2A%27%28%29%3B%3A%40%26%3D%2B%24%2C%2F%3F%25%23%5B%5D&text=%21%2A%27%28%29%3B%3A%40%26%3D%2B%24%2C%2F%3F%25%23%5B%5D"]);
+}
+
 @end
