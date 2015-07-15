@@ -51,5 +51,8 @@
     XCTAssertEqualObjects([FSOpenInWhatsApp urlForText:@"some text with % & / ( ) $ special chars" toAddressBookId:nil], [NSURL URLWithString:@"whatsapp://send?text=some%20text%20with%20%25%20%26%20%2F%20%28%20%29%20%24%20special%20chars"]);
 }
 
+- (void)testUrlStringWithSpecialCharsThatShouldNotBeDecoded {
+    XCTAssertEqualObjects([FSOpenInWhatsApp urlForText:@"!*'();:@&=+$,/?%#[]" toAddressBookId:nil], [NSURL URLWithString:@"whatsapp://send?text=%21%2A%27%28%29%3B%3A%40%26%3D%2B%24%2C%2F%3F%25%23%5B%5D"]);
+}
 
 @end
