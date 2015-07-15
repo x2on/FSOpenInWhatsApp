@@ -28,16 +28,6 @@
 
 #define WHATSAPP_URL_SCHEME @"whatsapp://"
 
-static NSString *encodeByAddingPercentEscapes(NSString *input) {
-    NSString *encodedValue = (__bridge_transfer NSString *) CFURLCreateStringByAddingPercentEscapes(
-            kCFAllocatorDefault,
-            (__bridge CFStringRef) input,
-            NULL,
-            (CFStringRef) @"!*'();:@&=+$,/?%#[]",
-            kCFStringEncodingUTF8);
-    return encodedValue;
-}
-
 @implementation FSOpenInWhatsApp
 
 + (BOOL)canSendWhatsApp {
@@ -61,12 +51,12 @@ static NSString *encodeByAddingPercentEscapes(NSString *input) {
     [urlString appendString:@"send?"];
     if (addressBookId) {
         [urlString appendString:@"abid="];
-        [urlString appendString:encodeByAddingPercentEscapes(addressBookId)];
+        [urlString appendString:[addressBookId stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet alphanumericCharacterSet]]];
         [urlString appendString:@"&"];
     }
     if (text) {
         [urlString appendString:@"text="];
-        [urlString appendString:encodeByAddingPercentEscapes(text)];
+        [urlString appendString:[text stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet alphanumericCharacterSet]]];
     }
     return [NSURL URLWithString:urlString];
 }

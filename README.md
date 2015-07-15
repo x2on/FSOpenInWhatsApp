@@ -5,7 +5,7 @@ FSOpenInWhatsApp is a tool for sending messages with WhatsApp iOS App.
 ## Install
 Using [CocoaPods](http://cocoapods.org/):
 
-`pod 'FSOpenInWhatsApp', '~> 1.0'`
+`pod 'FSOpenInWhatsApp', '~> 2.0'`
 
 ## Usage
 
@@ -23,7 +23,8 @@ Open WhatsApp app composer:
 ```
 
 ## System support
-iOS 6.0+ is currently supported.
+iOS 7.0+ is currently supported.
+If you need to support iOS 6.0 you could use `pod 'FSOpenInWhatsApp', '1.2'`
 
 ## License
 
