@@ -7,6 +7,14 @@ Using [CocoaPods](http://cocoapods.org/):
 
 `pod 'FSOpenInWhatsApp', '~> 2.0'`
 
+## iOS 9
+For iOS 9 you have to add the following to your `Info.plist`:
+```xml
+<key>LSApplicationQueriesSchemes</key>
+<array>
+  <string>whatsapp</string>
+</array>
+```
 ## Usage
 
 Check if WhatsApp app is installed: 
