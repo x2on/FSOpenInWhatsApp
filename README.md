@@ -5,7 +5,7 @@ FSOpenInWhatsApp is a tool for sending messages with WhatsApp iOS App.
 ## Install
 Using [CocoaPods](http://cocoapods.org/):
 
-`pod 'FSOpenInWhatsApp', '~> 2.0'`
+`pod 'FSOpenInWhatsApp', '~> 2.1'`
 
 ## iOS 9
 For iOS 9 you have to add the following to your `Info.plist`:
@@ -17,7 +17,7 @@ For iOS 9 you have to add the following to your `Info.plist`:
 ```
 ## Usage
 
-Check if WhatsApp app is installed: 
+Check if WhatsApp app is installed:
 
 ```objc
 if ([FSOpenInWhatsApp canSendWhatsApp]) {

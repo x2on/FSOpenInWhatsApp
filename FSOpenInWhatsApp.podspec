@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "FSOpenInWhatsApp"
-  s.version      = "2.0"
+  s.version      = "2.1"
   s.summary      = "FSOpenInWhatsApp is a tool for sending messages with WhatsApp iOS App."
   s.homepage     = "https://github.com/x2on/FSOpenInWhatsApp"
   s.social_media_url = 'https://twitter.com/x2on'

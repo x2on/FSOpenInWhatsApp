@@ -31,6 +31,13 @@
 @implementation FSOpenInWhatsApp
 
 + (BOOL)canSendWhatsApp {
+#ifdef __IPHONE_9_0
+    NSArray *applicationQuerySchemes = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"LSApplicationQueriesSchemes"];
+    if (![applicationQuerySchemes containsObject:@"whatsapp"])
+    {
+        NSLog(@"FSOpenInWhatsApp: Please add \"whatsapp\" to \"LSApplicationQueriesSchemes\" in your Info.plist");
+    }
+#endif
     return [[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:WHATSAPP_URL_SCHEME]];
 }
 
